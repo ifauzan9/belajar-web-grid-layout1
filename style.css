@@ -11,9 +11,8 @@ body{
 }
 
 .container{
-    background-color: lightblue;
-    /* margin: 50px auto; */
-    /* max-width: 800px; */
+    display: grid;
+    row-gap: 10px;
 }
 
 .header{
@@ -22,6 +21,7 @@ body{
         "hero hero feature-1"
         "hero hero feature-2"
     ;
+    order: 1;
 }
 
 .hero{
@@ -30,10 +30,14 @@ body{
     background-image: url(./img/hero.jpg);
     background-position: center;
     background-size: cover;
-    display: grid;
-    justify-content: start;
+    display: grid;    
     align-content: center;
-    padding-left: 50px;
+    justify-items: start;    
+    padding: 20px;
+}
+
+.hero h3, .hero p{
+    display: none;
 }
 
 .hero h3{
@@ -42,13 +46,14 @@ body{
     background-color: #000;
     color: #fff;
     padding: 4px;
+    margin-bottom: 10px;        
 }
 
 .hero p{
     font-size: 1.5raem;
     background-color: #000;
     color: #fff;
-    padding: 4px;
+    padding: 4px;            
 }
 
 .feature-1{
@@ -100,14 +105,14 @@ body{
 
 /* MENU */
 .menu{
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     display: grid;
     grid-template-columns: 1fr 2fr;
+    order: 0;
 }
 
-.logo{
-    background-color: lightblue;
-    display: grid;
+.logo{    
+    display: grid;    
     justify-content: start;
     align-content: center;    
 }
@@ -118,7 +123,7 @@ body{
     letter-spacing: 1.2px;
 }
 
-.nav {
+.nav {    
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));  
@@ -127,12 +132,12 @@ body{
 
 .nav li a{
     background-color: rgb(48, 48, 48);
-    display: flex;
+    display: block;
+    text-align: center;       
+    padding: 15px;
     height: 100%;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
-    font-size: .9rem;
+    font-size: .8rem;
     text-transform: uppercase;
     font-weight: bold;
     color: #fff;    
@@ -146,6 +151,18 @@ body{
 
 /* RESPONSIVE  BREAKPOINT*/
 @media screen and (max-width: 1024px) {
+    .logo{        
+        display: none;        
+    }
+
+    .menu{        
+        grid-template-columns: 1fr;
+        order: 2;
+    }
+
+    .hero h3, .hero p{
+        display: block;
+    }
     
 }
 
@@ -154,7 +171,7 @@ body{
 }
 
 @media screen and (max-width: 600px){
-    
+
 }
 
 
