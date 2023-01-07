@@ -8,6 +8,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     margin: 50px;
     background-color: rgb(255, 255, 241);
+    overflow-x: hidden;
 }
 
 .container{
@@ -156,7 +157,9 @@ body{
     flex-direction: column;
     justify-content: space-around;
     display: none;
-    cursor: pointer;
+    cursor: pointer;    
+    padding: 2px;
+    z-index: 2;
 }
 
 .hamburger span{
@@ -165,6 +168,31 @@ body{
     background-color: black;
     display: block;
     border-radius: 8px;
+    transition: all .3s;
+}
+
+.hamburger.active span{
+    background-color: #fff;
+}
+
+.hamburger span:nth-child(1){
+    transform-origin: 0 0;
+}
+
+.hamburger span:nth-child(3){
+    transform-origin: 0 0;
+}
+
+.hamburger.active span:nth-child(1){
+    transform: rotate(45deg) translate(4px, -4px);
+}
+
+.hamburger.active span:nth-child(2){
+    transform: scale(0);
+}
+
+.hamburger.active span:nth-child(3){
+    transform: rotate(-45deg)  translate(1px, 3px);
 }
 
 /* SERVICES */
@@ -226,11 +254,31 @@ body{
     }
 
     .menu .nav {
-        display: none;
+        /* display: none; */
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        column-gap: 0;        
+        grid-template-columns: 1fr; 
+        transform: translateX(100%);
+        transition: transform .5s;
+    }
+
+    .menu .nav.open{
+        transform: translateX(0%);
     }
 
     .hamburger{        
         display: flex;
+    }
+
+    .nav li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;    
     }
 }
 

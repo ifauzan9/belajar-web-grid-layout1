@@ -92,4 +92,13 @@
       </div>
     </div>
   </body>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const menuNav = document.querySelector(".nav");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      menuNav.classList.toggle("open");
+    });
+  </script>
 </html>
