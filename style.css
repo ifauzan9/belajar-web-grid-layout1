@@ -229,6 +229,56 @@ body{
     font-size: .8rem;
 }
 
+/* GALLERY */
+.gallery{    
+    display: grid;        
+    gap: 5px;
+    order: 3;
+    grid-template-areas: 
+    "title"
+    "image"
+    ;
+}
+
+.gallery h2{
+    text-align: center;
+    grid-area: title;        
+    /* grid-column-start: 1; */
+    /* grid-column-end: -1; */
+    padding: 10px;
+}
+
+.gallery .list{
+    grid-area: image;    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 4px;
+}
+
+.gallery img {    
+    width: 100%;     
+}
+
+/* BOXAJA */
+.box-aja{
+    order: 4;
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.box-aja h1{
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.kotak{
+    background-color: lightcoral;
+}
+
+
+
+
 
 /* RESPONSIVE  BREAKPOINT*/
 @media screen and (max-width: 1024px) {
